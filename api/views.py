@@ -7,9 +7,8 @@ import uuid
 
 @api_view(['GET', 'POST'])
 def get_or_create_game_room(request):
-    print('test')
     if request.method == 'GET':
-        room = GameRoom.objects.filter(player_two__isnull=True, player_one_reply_channel__isnull = False).first()
+        room = GameRoom.objects.filter(player_two__isnull=True, player_one_reply_channel__isnull=False).first()
         user_id = uuid.uuid4()
 
         if room:
