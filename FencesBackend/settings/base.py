@@ -13,7 +13,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'channels'
+    'channels',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    'default': env.db()
+}
 
 # Websocket Channels
 CHANNEL_LAYERS = {
